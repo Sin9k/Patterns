@@ -1,3 +1,6 @@
 # Patterns:
 
-## setCurrentLocationToRegistationForm
+## Interface Based Programming (setCurrentLocation)
+
+- RU video
+- Sources
