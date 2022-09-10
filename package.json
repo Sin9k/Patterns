@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "true-di": "^2.1.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.19"
+  }
+}
