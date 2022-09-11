@@ -11,5 +11,5 @@
 /** @type {(updateForm: (form: Address) => void, updateError: (error: AppError) => void) => RegFormFillerThunk<Promise<void>>} */
 export const fillRegFormWithCurrentAddress =
   (updateForm, updateError) =>
-  ({ currentAddressProvider }) => 
-    currentAddressProvider.getCurrentAddress().then(updateForm, updateError);
+    ({ currentAddressProvider }) =>
+      currentAddressProvider.getCurrentAddress().then(updateForm, updateError);

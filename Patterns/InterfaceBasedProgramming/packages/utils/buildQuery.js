@@ -2,4 +2,4 @@
 export const buildQuery = (params) => Object
   .keys(params)
   .map((param) => `${param}=${encodeURIComponent(params[param])}`)
-  .join("&");
+  .join('&');
