@@ -33,7 +33,8 @@
       "named": "never",
       "asyncArrow": "always"
     }],
-    "@typescript-eslint/consistent-type-definitions": "off"
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/no-invalid-void-type": "off"
   },
   "settings": {
     "react": {
