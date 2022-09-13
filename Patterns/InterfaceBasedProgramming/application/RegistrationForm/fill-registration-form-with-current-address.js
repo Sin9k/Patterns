@@ -1,7 +1,7 @@
-/** @typedef {import('../packages/domain').Address} Address */
-/** @typedef {import('../packages/domain').AppError} AppError */
+/** @typedef {import('../../packages/domain').Address} Address */
+/** @typedef {import('../../packages/domain').AppError} AppError */
 
-/** @typedef {{ currentAddressProvider: import('../packages/interfaces').ICurrentAddressProvider }} RegFormFillerDeps */
+/** @typedef {{ currentAddressProvider: import('../../packages/interfaces').ICurrentAddressProvider }} RegFormFillerDeps */
 
 /**
  * @template T

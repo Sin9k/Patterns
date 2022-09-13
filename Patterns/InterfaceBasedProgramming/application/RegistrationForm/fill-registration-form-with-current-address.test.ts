@@ -1,11 +1,10 @@
-import { ICurrentAddressProvider } from '../packages/CoordsCurrentAddressProvider';
-import { Address, AppError } from '../packages/domain';
-import FakeInterface from '../packages/utils/fake-interface';
-
+import { Address, AppError } from '../../packages/domain';
 import { fillRegFormWithCurrentAddress } from './fill-registration-form-with-current-address';
 
 describe('fillRegFormWithCurrentAddress', () => {
-  const currentAddressProvider = FakeInterface<ICurrentAddressProvider>();
+  const currentAddressProvider = {
+    getCurrentAddress: jest.fn<Promise<Address>, []>(),
+  };
   const updateForm = jest.fn<void, [Address]>();
   const updateError = jest.fn<void, [AppError]>();
 

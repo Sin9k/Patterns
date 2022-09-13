@@ -2,7 +2,7 @@ import AppError from '../AppError';
 import { buildQuery } from '../utils/buildQuery';
 import { addressFromGeocodingResult } from './address';
 
-/** @typedef {(input: URL, init?: RequestInit) => Promise<Response>} FetchFn */
+/** @typedef {(input: string, init?: RequestInit) => Promise<Response>} FetchFn */
 /** @type {(apiKey: string, fetchFn?: FetchFn) => import("../interfaces").IAddressResolver} */
 const GoogleAddressResolver = (apiKey, fetchFn = fetch) => ({
   async resolveAddressByCoords({ lat, lng }) {
@@ -24,7 +24,7 @@ const GoogleAddressResolver = (apiKey, fetchFn = fetch) => ({
       );
     }
 
-    if (!result.ok) throw AppError('EADDRESS_NOT_RESOLVED', body.error_message);
+    if (!result.ok || body.error_message) throw AppError(body.status, body.error_message);
 
     // TODO: prove type of Google result here
 

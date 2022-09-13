@@ -1,4 +1,3 @@
-import React from 'react';
 import { ContainerProvider } from './container/container-react-binding';
 import RegistrationForm from './RegistrationForm';
 import container from './container';
