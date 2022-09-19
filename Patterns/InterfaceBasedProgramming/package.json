@@ -5,10 +5,8 @@
     "dev": "webpack serve"
   },
   "dependencies": {
-    "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "true-di": "^2.1.7"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -16,6 +14,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.0.0",
     "@types/react": "^18.0.19",
+    "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "eslint": "^8.23.0",
     "eslint-config-standard-with-typescript": "^22.0.0",

@@ -1,11 +1,11 @@
-import { ContainerProvider } from './container/container-react-binding';
+import { CurrentAddressProvider } from '../packages/CurrentAddressProviderReact';
 import RegistrationForm from './RegistrationForm';
-import container from './container';
+import currenAddressProvider from './NavGoogleCurrentAddressProvider/NavGoogleCurrentAddressProcider';
 
 const App = () => (
-  <ContainerProvider container={container}>
+  <CurrentAddressProvider provider={currenAddressProvider}>
     <RegistrationForm />
-  </ContainerProvider>
+  </CurrentAddressProvider>
 );
 
 export default App;

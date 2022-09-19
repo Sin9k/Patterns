@@ -1,6 +1,5 @@
 import React from 'react';
-import { fillRegFormWithCurrentAddress } from './fill-registration-form-with-current-address';
-import { useRun } from '../container/container-react-binding';
+import { useGetCurrentAddress } from '../../packages/CurrentAddressProviderReact';
 import ErrorAlert from '../ErrorAlert';
 
 /** @typedef {import('../../packages/domain').Address} Address */
@@ -31,14 +30,14 @@ const RegistrationForm = () => {
   const [form, updateForm] = React.useState(initialForm);
   const [error, updateError] = React.useState(/** @type {AppError | null} */ (null));
 
-  const run = useRun();
+  const getCurrentAddress = useGetCurrentAddress();
 
   const fillFormWithCurrentAddr = React.useCallback(
-    () => run(fillRegFormWithCurrentAddress(
+    () => getCurrentAddress().then(
       address => updateForm({ ...initialForm, ...address }),
       updateError,
-    )),
-    [updateForm, updateError],
+    ),
+    [getCurrentAddress],
   );
 
   return (

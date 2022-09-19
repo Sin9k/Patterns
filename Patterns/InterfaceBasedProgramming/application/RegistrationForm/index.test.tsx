@@ -3,14 +3,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ICurrentAddressProvider } from '../../packages/interfaces';
 import FakeInterface from '../../packages/utils/fake-interface';
-import { IContainer } from '../container/container';
-import { ContainerProvider } from '../container/container-react-binding';
+import { CurrentAddressProvider } from '../../packages/CurrentAddressProviderReact';
 import RegistrationForm from '.';
 
 describe('RegistrationForm', () => {
-  const container = FakeInterface<IContainer>();
   const currentAddressProvider = FakeInterface<ICurrentAddressProvider>();
-  container.currentAddressProvider = currentAddressProvider;
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -20,9 +17,9 @@ describe('RegistrationForm', () => {
     expect.assertions(1);
 
     render(
-      <ContainerProvider container={container}>
+      <CurrentAddressProvider provider={currentAddressProvider}>
         <RegistrationForm />
-      </ContainerProvider>,
+      </CurrentAddressProvider>,
     );
 
     currentAddressProvider.getCurrentAddress.mockResolvedValueOnce({ city: 'Roma' });
